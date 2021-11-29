@@ -1,7 +1,9 @@
 import { useState } from "react";
 import TodoForm from "./TodoForm";
+import { RiCloseCircleLine } from "react-icons/ri";
+import { TiEdit } from "react-icons/ti";
 
-function Todo({ todos, completeTodo, updateTodo }) {
+function Todo({ todos, completeTodo, updateTodo, removeTodo }) {
   const [edit, setEdit] = useState({ id: null, value: "" });
 
   const submitUpdate = (value) => {
@@ -19,7 +21,10 @@ function Todo({ todos, completeTodo, updateTodo }) {
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
         {todo.text}
       </div>
-      <div></div>
+      <div>
+        <RiCloseCircleLine onclick={() => removeTodo(todo.id)} />
+        <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
+      </div>
     </div>
   ));
 }
