@@ -22,7 +22,7 @@ function Todo({ todos, completeTodo, updateTodo, removeTodo }) {
         {todo.text}
       </div>
       <div>
-        <RiCloseCircleLine onclick={() => removeTodo(todo.id)} />
+        <RiCloseCircleLine onClick={() => removeTodo(todo.id)} />
         <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
       </div>
     </div>

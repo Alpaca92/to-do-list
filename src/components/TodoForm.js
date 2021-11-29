@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function TodoForm({ onSubmit }) {
-  const [input, setInput] = useState("");
+function TodoForm({ onSubmit, edit }) {
+  const [input, setInput] = useState(edit ? edit.value : "");
 
   const handleChange = (event) => {
     setInput(event.target.value);
@@ -10,22 +10,21 @@ function TodoForm({ onSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onSubmit({ id: Math.floor(Math.random() * 100000), text: input });
+    const id = edit ? edit.id : Math.floor(Math.random() * 100000);
+    onSubmit({ id, text: input });
     setInput("");
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          value={input}
-          type="text"
-          placeholder="오늘 할 일을 입력해주세요."
-        />
-        <button>+</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        onChange={handleChange}
+        value={input}
+        type="text"
+        placeholder="오늘 할 일을 입력해주세요."
+      />
+      {edit ? <button>Edit Todo</button> : <button>add Todo</button>}
+    </form>
   );
 }
 
