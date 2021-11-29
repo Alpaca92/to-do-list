@@ -37,7 +37,7 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <>
       <h1>To-do List</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
@@ -46,7 +46,7 @@ function TodoList() {
         completeTodo={completeTodo}
         removeTodo={removeTodo}
       />
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./TodoForm.module.css";
 
 function TodoForm({ onSubmit, edit }) {
   const [input, setInput] = useState(edit ? edit.value : "");
@@ -16,14 +17,19 @@ function TodoForm({ onSubmit, edit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todo-form">
       <input
         onChange={handleChange}
         value={input}
         type="text"
         placeholder="오늘 할 일을 입력해주세요."
+        className="todo-input"
       />
-      {edit ? <button>Edit Todo</button> : <button>add Todo</button>}
+      {edit ? (
+        <button className={styles['todo-form']}>Edit Todo</button>
+      ) : (
+        <button className={styles['todo-form']}>add Todo</button>
+      )}
     </form>
   );
 }
