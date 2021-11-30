@@ -1,3 +1,5 @@
-.todo-form {
+.todo-btn {
   background-color: green;
+  border: none;
+  border-radius: 10px;
 }

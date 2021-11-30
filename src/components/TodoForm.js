@@ -26,9 +26,9 @@ function TodoForm({ onSubmit, edit }) {
         className="todo-input"
       />
       {edit ? (
-        <button className={styles['todo-form']}>Edit Todo</button>
+        <button className={styles['todo-btn']}>Edit Todo</button>
       ) : (
-        <button className={styles['todo-form']}>add Todo</button>
+        <button className={styles['todo-btn']}>add Todo</button>
       )}
     </form>
   );
