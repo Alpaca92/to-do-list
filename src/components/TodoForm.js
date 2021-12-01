@@ -25,11 +25,7 @@ function TodoForm({ onSubmit, edit }) {
         placeholder="오늘 할 일을 입력해주세요."
         className="todo-input"
       />
-      {edit ? (
-        <button className={styles['todo-btn']}>Edit Todo</button>
-      ) : (
-        <button className={styles['todo-btn']}>add Todo</button>
-      )}
+      {edit ? <button className="todo-btn">Edit Todo</button> : <button className="todo-btn">add Todo</button>}
     </form>
   );
 }
