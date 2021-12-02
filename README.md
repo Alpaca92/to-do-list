@@ -1,12 +1,10 @@
-## Todo List
+## To-do List
 
 Todo list를 쉽게 작성하고 볼 수 있도록 만들어보았습니다
 
 ### Skill
 
 ✔ React.js
-
-✔ Scss
 
 ### Feature
 
