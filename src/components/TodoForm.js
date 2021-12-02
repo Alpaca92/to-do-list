@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./TodoForm.module.css";
 
 function TodoForm({ onSubmit, edit }) {
   const [input, setInput] = useState(edit ? edit.value : "");
@@ -25,7 +24,7 @@ function TodoForm({ onSubmit, edit }) {
         placeholder="오늘 할 일을 입력해주세요."
         className="todo-input"
       />
-      {edit ? <button className="todo-btn">Edit Todo</button> : <button className="todo-btn">add Todo</button>}
+      {edit ? <button className="todo-btn edit">Edit Todo</button> : <button className="todo-btn">add Todo</button>}
     </form>
   );
 }

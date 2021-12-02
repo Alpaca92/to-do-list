@@ -40,6 +40,7 @@ function TodoList() {
       return todo;
     });
 
+    localStorage.setItem("to-do-list", JSON.stringify(updatedTodos));
     setTodos(updatedTodos);
   };
 

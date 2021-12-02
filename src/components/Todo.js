@@ -21,9 +21,15 @@ function Todo({ todos, completeTodo, updateTodo, removeTodo }) {
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
         {todo.text}
       </div>
-      <div>
-        <RiCloseCircleLine onClick={() => removeTodo(todo.id)} />
-        <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} />
+      <div className="icons">
+        <RiCloseCircleLine
+          className="delete-icon"
+          onClick={() => removeTodo(todo.id)}
+        />
+        <TiEdit
+          className="edit-icon"
+          onClick={() => setEdit({ id: todo.id, value: todo.text })}
+        />
       </div>
     </div>
   ));
